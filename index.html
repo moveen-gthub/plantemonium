@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Plantemonium Portfolio</title>
+    <meta name="author" content ="Moveen Muruhananthan">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <style type="text/css">* {cursor: url(https://cur.cursors-4u.net/games/gam-6/gam584.cur), auto !important;}</style><a href="https://www.cursors-4u.com/cursor/2009/01/27/magneton-pokemon.html" target="_blank" title="Magneton Pokemon"><img src="https://cur.cursors-4u.net/cursor.png" border="0" alt="Magneton Pokemon" style="position:absolute; top: 0px; right: 0px;" /></a>
+    <script src="Plantemonium Cursor JS.js"></script>
+    <style>html, body{
+        margin: 0; padding: 0; height: 100%;} 
+        .titles{
+            position: relative;
+            height: 100%;
+            width: 100%;
+        }
+        .model{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 55%;
+            width: 45%;
+        }
+        .button{
+            background-color: transparent; 
+            color: blue; 
+            border: none; 
+            position: absolute;
+        }
+        .mini-button{
+            background-color: black; 
+            color: blue; 
+            border: 2px solid black; 
+            border-radius: 5px; 
+            font-family: sans-serif;
+            display: inline-block;
+            margin: 0 5px;
+        }
+        .button:hover{
+            border-radius: 15px;
+            box-shadow: 0 0 30px blue;
+        }
+        .mini-button:hover{
+            background-color: blue;
+            color: white;
+        }
+        .modal{
+            display: none;
+            position: fixed;
+            z-index: 10;
+            left: 0;
+            top: 0%;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.8);
+        }
+
+        .mini-modal{
+            display: none;
+            position: fixed;
+            z-index: 20;
+            left: 31.5%;
+            top:12%;
+            width: 40%;
+            height: 80%;
+            overflow: auto;
+            background-color: black;
+        }
+
+        .micro-modal{
+            display: none;
+            position: fixed;
+            z-index: 30;
+            left: 31.5%;
+            top:33%;
+            width: 40%;
+            height: 50%;
+            overflow: auto;
+            background-color: black;
+            border: 5px double blue;
+        }
+
+        .modal-content{
+            background-color: black;
+            margin: 5.5% auto;
+            padding: 20px;
+            border: 5px double blue;
+            border-radius: 5px;
+            width: 80%;
+            color: white;
+            position: relative;
+        }
+
+        .mini-modal-content{
+            background-color: black;
+            margin: 10% auto;
+            padding: 20px;
+            border: 5px double blue;
+            border-radius: 5px;
+            color: white;
+        }
+
+        .close{
+            color: blue;
+            float: right;
+            font-size: 40px;
+            font-weight: bold;
+            position: absolute;
+            top: 10px;
+            right: 20px;
+        }
+        .close:hover, .close:focus{
+            color: blue;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .modal-header{
+            padding: 2px 16px;
+            color: blue;
+            border-bottom: 1px solid blue;
+            margin-bottom: 15px;
+        }
+        .modal-body{
+            padding: 2px 16px;
+        }
+        .mini-modal-body{
+            padding: 2px 16px;
+        }
+
+    </style>
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+<script src="https://kit.fontawesome.com/05f176ca76.js" crossorigin="anonymous"></script>
+</head>
+
+<body style = "background-color: black;">
+
+<div class="custom-cursor.site-wide"></div>
+
+<div class="titles">
+    <!--header of the page-->
+    <h1 style = "color:blue; font-family: sans-serif; position: absolute; top: 5%; left: 50%; transform: translate(-50%, -50%); ">
+        Plantemonium</h1>
+    
+<!-- 700px from top to bottom, 1400px left to right-->
+    <a href="Plantemonium scanned notebook.pdf" target="_blank">
+        <button 
+        class="button" title ="Notebook scan" style="left:27.5%; top:22.5%; transform: translate(-50%, -50%); font-size: 24px; font-family: sans-serif">
+        Scanned Notes</button>
+    </a>
+
+    <button class="button" title ="Acquired/Developed Skills" style="left:17.5%; top: 50%; transform: translate(-50%, -50%); font-size: 24px; font-family: sans-serif"
+        onclick="openModal('skillsModal')">
+        Notable Skills</button>
+    
+    <button class="button" title ="Music settings" style="left: 27%; top: 77.5%; transform: translate(-50%, -50%); font-size: 24px; font-family: sans-serif"
+        onclick="openModal('musicModal')">
+        #BarOfMusic</button>
+    
+    <button class="button" title="Evaluating my work" style="left: 50%; top: 95%; transform: translate(-50%, -50%); font-size: 24px; font-family: sans-serif"
+        onclick="openModal('mirrorModal')">
+        Reflection</button>
+    
+    <button class="button" title ="Design materials and dimensions" style="left: 73%; top: 22.5%; transform: translate(-50%, -50%); font-size: 24px; font-family: sans-serif"
+        onclick="openModal('techModal')">
+        Technical Details</button>
+    
+    <button class="button" title ="Design function and purpose" style="left: 83.5%; top: 50%; transform: translate(-50%, -50%); font-size: 24px; font-family: sans-serif"
+        onclick="openModal('opModal')">
+        Operational Details</button>
+
+    <a href="https://moveenportfolioone.carrd.co/" target="_blank">
+            <button class="button" title ="My other project" style="left: 73%; top: 77.5%; transform: translate(-50%, -50%); font-size: 24px; font-family: sans-serif">
+        Vemini Portfolio</button>
+    </a>
+
+</div>
+
+<!--adding 3d model of plantemonium in center of page-->
+<div class="model">
+    <model-viewer
+        src="plantemonium_assembly_new.glb"
+        auto-rotate
+        camera-controls
+        shadow-intensity="1"
+        style="width: 90%; height: 90%;"
+        ></model-viewer>
+</div>
+
+<!--https://www.vecteezy.com/free-png/plant-->
+<img src="Plant bg img.webp" height="350" style="position: absolute; top:0%; left: -1%; z-index: -1;">
+<!--https://leafy-life.com/how-to-care-for-ceropegia-woodii-string-of-hearts/-->
+<img src="ceropegia image.webp" height="350" style="position: absolute; top: 51.5%; left: 75.3%; z-index: -1;">
+
+
+<!--modal code for buttons-->
+<div id="musicModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('musicModal')">&times;</span>
+        <div class="modal-header">
+            <h2 style="text-align: center; font-family: sans-serif;">♫ Bar of Music ♫</h2>
+        </div>
+        <div class="modal-body">
+            <p style = "font-family: sans-serif;text-align: center;">If you would like to change the background music, or have none at all, feel free to: play, pause, or mute any songs below; 
+            You may hover the mouse over each audio control to figure out what background music is appropriate for you. Pause a track before playing another. Enjoy the plantastic portfolio, digital traveller!</p>
+            <audio style="display: block; margin: 10px auto" title="Default Track" controls autoplay loop src="Vibing Over Venus.mp3"></audio>
+            <audio style="display: block; margin: 10px auto" title ="Default Track 2: The Cool Edition" controls loop src="Ice Flow.mp3"></audio>
+            <audio style="display: block; margin: 10px auto" title ="Are you even supposed to be here?(I'm here by accident...)" controls loop src="Fluffing a Duck.mp3"></audio>
+            <audio style="display: block; margin: 10px auto" title ="I am definitely NOT supposed to be here(I'm here in secret...)" controls loop src="Sneaky Snitch.mp3"></audio>
+        </div>
+    </div>
+</div>
+
+<div id="mirrorModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('mirrorModal')">&times;</span>
+        <div class="modal-header">
+            <h2 style="text-align: center; font-family: sans-serif;">Reflection</h2>
+        </div>
+        <div class="modal-body">
+            <p style="font-family: sans-serif;">The Plantemonium was a mini-project undertaken to develop technical and underdeveloped skills that would support me in my future major projects. It served to prevent burnout whilst honing any inventive capabilities I have, including processes involved in designing and creating ideas. 
+                From ideation, documentation, and design, I have learned a lot from this project and will carry these invaluable experiences forward to help me in any future endeavors(i.e., just my other projects and possibly work). 
+                The project was successful in that I created a final product and saw it in use as intended. This isn't to say it came without challenges, as there were a handful of unforeseen pitfalls, including design tolerances, misunderstanding of key theorems, and mechanical and material failures. 
+                These challenges gave me experience and understanding of what is important in the research and design process. 
+            </p>
+            <p style="font-family: sans-serif;">
+                I am especially proud that I was able to bring an idea from paper to reality through hard work and creative thinking, especially an idea that could work despite the final product differing in operation from what was originally intended. 
+                I managed to maintain a creative design without entirely sacrificing its function. The Plantemonium can truly serve as a plant pot while still being capable of self-watering through its unique design.
+                Despite the successful creation of the Plantemonium, there are plenty of aspects that could've improved the design. 
+                The levitating aspect was something that was not properly understood or treated carefully with; Any future design of the Plantemonium could benefit from electromagnetic levitation, however, this would be purely for aesthetic reasons. 
+                The cost of manufacturing the Plantemonium could've greatly decreased if I also had a stronger grasp of tolerances in mechanical design, from dimensions to the thickness of certain materials used
+                (such as PETG initially leaking the solution through the tributary, requiring repair with epoxy resin).
+            </p>
+            <h3 style="font-family: sans-serif;"><u>Moving Forward</u></h3>
+            <p style="font-family: sans-serif;">I intend to return to my major projects, taking things a step further with what I've learnt.
+                I intend to develop a website that utilises back-end developing, rather than just front-end(what you're seeing now); like a projects hub with a newsletter.
+                I am looking forward to designing an air compressor, as well as a variant of an electric skateboard. And putting them together 😉😈.
+            </p>
+            <p style="font-family: sans-serif;">
+                I am also looking to using 'less educational/beginner' approaches; moving away from Arduino etc. and looking in the direction of higher-grade approaches such as using an STM32 processor, 
+                as well as understanding and using more advanced manufacturing methods for the design projects I have in mind. These coming project should greatly improve my mechanical engineering and computer science skills,
+                 alongside my foundation in electrical and electronic engineering.
+            </p>
+        </div>
+    </div>
+</div>
+
+<div id="opModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('opModal')">&times;</span>
+        <div class="modal-header">
+            <h2 style="text-align: center; font-family: sans-serif;">Operational Details</h2>
+        </div>
+        <div class="modal-body">
+        <img src="Plantemonium front.jpg" style="display: inline-block;vertical-align: top;" height="400">
+        <img src="Plantemonium Top.jpg" style="display: inline-block;vertical-align: top;" height="400">
+        <video controls muted height ="400" style="display: inline-block;vertical-align: top;">
+            <source src="Plantemonium Bounce Vid.mov">
+        </video>
+        <div style="display: inline-block; vertical-align: top;width: 325px; height: 400px;">
+            <p style="font-family: sans-serif;margin: 0;">
+        The plantemonium is divided into 3 separate parts: substratum, receptacle, and tributary, 
+        each supporting one another to ensure the plantemonium operates successfully. Discover how they operate below:
+            </p>
+        <button style="display:block; margin-top: 4.5%; margin-left: 33%;" class="mini-button" onclick="openModal('subtmodal')"><b>Substratum</b></button>
+        <div id="subtmodal" class="micro-modal">
+            <span class="close" onclick="closeModal('subtmodal')">&times;</span>
+            <div class="mini-modal-body">
+                <h3 style="text-align: center; font-family: sans-serif;"><u>Substratum</u></h3>
+                <p style="font-family: sans-serif; margin-top: 6%;">The substratum contains 4 magnets(initially 8, hence the 4 remaining empty cavities that were supposed to be for the Halbach array), which would remain fixed in their cavities and repel the magnets in the receptacle to create distance between the two components, making it levitate. 
+                    In practice, due to Earnshaw's theorem, the magnets attracted each other and moved accordingly despite their fixed positions within their respective parts. This can be observed in the video on the left. The substratum also has two more features: the tube and its support structure. 
+                    The tube's diameter is less than the receptacle's inner hole diameter, ensuring that the substratum and receptacle do not touch each other, so the(original) levitating effect would be properly observed. The tube also has a smaller-diameter tube at the top to connect with the tributary. 
+                    The support structure was a last-minute change to the part to ensure the tube does not easily break when the plantemonium is handled; however, in practice, it acts as a physical barrier between the surfaces of the substratum and receptacle. </p>
+            </div>
+        </div>
+        <button style="display:block; margin-top: 4.5%; margin-left: 33%;" class="mini-button" onclick="openModal('rectmodal')"><b>Receptacle</b></button>
+        <div id="rectmodal" class="micro-modal">
+            <span class="close" onclick="closeModal('rectmodal')">&times;</span>
+            <div class="mini-modal-body">
+                <h3 style="text-align: center; font-family: sans-serif;"><u>Receptacle</u></h3>
+                <p style="font-family: sans-serif; margin-top: 6%;">
+            The receptacle contains 2 magnets(with 6 empty cavities originally for the Halbach array), which were meant to repel the magnets below but ended up attracting one another. 
+            Both sets of magnets for the substratum and receptacle were fixed facing each other with like poles.</p>
+            <br>
+            <p style="font-family: sans-serif;">
+            The receptacle is divided into 2 sections, 
+            divided by a lid: a magnet container(same design as the substratum's Halbach array cavities), and a soil pot. 
+            The soil pot is a large receptacle(who'd have guessed).
+            </p>
+            </div>
+        </div>
+        <button style="display:block; margin-top: 4.5%; margin-left: 33%;" class="mini-button" onclick="openModal('tribtmodal')"><b>Tributary</b></button>
+        <div id="tribtmodal" class="micro-modal">
+            <span class="close" onclick="closeModal('tribtmodal')">&times;</span>
+            <div class="mini-modal-body">
+                <h3 style="text-align: center; font-family: sans-serif;"><u>Tributary</u></h3>
+                <p style="font-family: sans-serif; margin-top: 6%;">
+                    The tributary is a container for a nutrient-filled solution(or water). It has an inner hole with a diameter that can hold the smaller tube from the substratum, 
+                    connecting it directly to the substratum and ensuring that the receptacle is not affected by extra mass from the tributary(liquid included), which was imperative for the levitating aspect(now seemingly redundant). 
+                </p>
+                <br>
+                <p style="font-family: sans-serif;">
+                    The wicks are cotton ropes that are placed inside the tributary and travel down inside the receptacle. 
+                    They remain in contact with liquid to deliver nutrients and water to the soil in the receptacle.
+                </p>
+            </div>
+        </div>
+        <p style="font-family: sans-serif;margin-left: 0px; margin-top: 4.5%;">
+            Due to Earnshaw's theorem and the support structure of the substratum, the substratum and receptacle are constrained in a fixed position. 
+            If the the receptacle is spun, it bounces due to the repulsion between the substratum. However, if kept passive, it remains in what could be described as a pseudo-levitation state.
+            These 3 parts work together in an effort to create a self-watering, levitating(now bounce-on-demand) plant pot. 
+        </p>
+        </div>
+        </div>
+    </div>
+</div>
+
+<div id="techModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('techModal')">&times;</span>
+        <div class="modal-header">
+            <h2 style="text-align: center;font-family: sans-serif;">Technical Details</h2>
+        </div>
+        <div class="modal-body" style="font-family: sans-serif;">
+            <button style="position: absolute; left:5%;" class="mini-button" onclick="openModal('submodal')"><b>Substratum Images</b></button>
+            <button style="position: absolute; left:30% "class="mini-button" onclick="openModal('recmodal')"><b>Receptacle Images</b></button>
+            <button style="position: absolute; left:55%;"class="mini-button" onclick="openModal('tribmodal')"><b>Tributary Images</b></button>
+            <button style="position: absolute; left:80%;"class="mini-button" onclick="openModal('plntmodal')"><b>Plantemonium Images</b></button>
+            <br>
+            <hr>
+            <h3><u>Substratum Dimensions</u></h3>
+            <p>Octagonal plate: side length(40mm), thickness/height(13mm), chamfer distance from center(10mm) | 
+            Cube cavities: 10x10x10(mm). Elevation from bottom(1.5mm). Distance from edge(10mm, from midpoint of edge) |
+            Rod: height(155mm), diameter(11mm) | Mini-rod: height(15mm), diameter(6.8mm)</p>
+            <h3><u>Receptacle Dimensions</u></h3>
+            <p>Height(100mm), inner/outer octagon side length(40/45.36mm), central slot inner/outer diameter(14/18mm) |
+            Cube cavities: 10x10x10(mm), 1.77x1.77x1(mm) cube stoppers at each corner of each cube cavity | 
+            Receptacle lid: octagonal side length(40mm), height(2.5mm), central slot diameter(18.5mm)
+            </p>
+            <h3><u>Tributary Dimensions</u></h3>
+            <p>Bottom part: inner/outer top diameter(~78/84mm), height, including tabs(44mm), 
+            bottom diameter(20mm), inner cavity inner/outer diameter/(7/10mm), inner cavity height(15mm) | tabs: 4x2x2(mm) positioned 90 deg from each other |
+            Top part: top diameter(32mm), inner/outer bottom diameter(~78/84mm), tab cavities(4x2)mm extruded cut
+            </p>
+            <h3><u>Materials</u></h3>
+            <p>3D printing material: PETG(Receptacle(inc. lid) and tributary bottom), ABS(Substratum, tributary top) | Grade N52 neodymium magnets | Cotton self-watering wicks</p>
+        </div>
+        <div id="submodal" class="mini-modal">
+            <span class="close" onclick="closeModal('submodal')">&times;</span>
+            <div class="mini-modal-body">
+                <img src="Substratum Base.jpg" height="400">
+                <img style="display: block;" src="Substratum.jpg" height="500">
+            </div>
+        </div>
+        <div id="recmodal" class="mini-modal">
+            <span class="close" onclick="closeModal('recmodal')">&times;</span>
+            <div class="mini-modal-body">
+                <img src="Receptacle bottom.jpg" height="400">
+                <img style="display: block;" src="Receptacle top.jpg" height="400">
+            </div>
+        </div>
+        <div id="tribmodal" class="mini-modal">
+            <span class="close" onclick="closeModal('tribmodal')">&times;</span>
+            <div class="mini-modal-body">
+                <img src="Tributary.jpg" height="400">
+                <img style="display: block;" src="Tributary exploded.jpg" height="400">
+            </div>
+        </div>
+        <div id="plntmodal" class="mini-modal">
+            <span class="close" onclick="closeModal('plntmodal')">&times;</span>
+            <div class="mini-modal-body">
+                <img src="Plantemonium no wicks.jpg" height="900">
+                <img style="display: block;" src="Plantemonium diagonal pic.jpg" height="1000">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="skillsModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('skillsModal')">&times;</span>
+        <div class="modal-header">
+            <h2 style="text-align: center; font-family: sans-serif;">Notable Skills</h2>
+        </div>
+        <div class="modal-body">
+            <p style ="font-family: sans-serif;">This project was undertaken for 2 main reasons: 
+            To prevent burnout related to the development of another project(see Vemini Portfolio), and to prove that I can invent, in general, using my ingenuity.
+            A byproduct of this project was the acquirement and development of skills, both old and new. For a brief catch-up: I am an undergraduate electrical and 
+            electronic(EEE) engineering student whose professional career goal is to become a chartered mechatronics engineer. If these skills pique your interest in me professionally, 
+            my LinkedIn is linked<a style =" color: black;" href ="https://www.linkedin.com/in/moveen-muruhananthan-616b1b242/" target="_blank">
+            <i style ="color: white; font-size: 13px;" title ="Click to connect" class="fa-brands fa-linkedin-in"></i>
+            </a>this paragraph!
+            </p>
+            <p style ="font-family: sans-serif;">I purposefully avoided the use of power-consumption for a final design solution so the plantemonium can be independent 
+            of external power. As an EEE student, this decision was crucial for the skill development of my weaker mechatronics fields(mechanical engineering and computer science).
+            This section highlights the experience and skills I have gained in relation to those fields, as well as others such as physics and horticulture
+            (a farcry nonetheless but I digress(say that three times, it rhymes. so does that, anyways: my skills are below)).
+            </p>
+            <br>
+            <table bgcolor="blue" style="margin: auto;">
+                <tr bgcolor="black" style = "font-family: sans-serif; text;">
+                    <th width ="200">Field</th>
+                    <th width="600">Experience</th>
+                </tr>
+                <tr bgcolor="black" style = "text-align: center; font-family: sans-serif; font-size: 14px;">
+                    <td height ="33">Mechanical Engineering</td>
+                    <td>CAD 3D Modelling using SolidWorks, and structural designing of plantemonium</td>
+                </tr>
+                <tr bgcolor="black" style = "font-family: sans-serif;text-align: center; font-size: 14px;">
+                    <td>Computer Science</td>
+                    <td>Web development; HTML, CSS, JavaScript - general practical introduction to programming languages</td>
+                </tr>
+                <tr bgcolor="black" style = "font-family: sans-serif;text-align: center;font-size: 14px;">
+                    <td>Physics</td>
+                    <td>Electromagnetism; Knowledge and application of Earnshaw's theorem and halbach arrays for attempt at magnetic levitation</td>
+                </tr>
+                <tr bgcolor="black" style = "font-family: sans-serif;text-align: center;font-size: 14px;">
+                    <td>Horticulture</td>
+                    <td>Knowledge and application of wicks to hydrate soil via capillary action; wicking is a notable method for hydroponics</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script>
+    function openModal(modalId){
+        document.getElementById(modalId).style.display="block";
+    }
+    function closeModal(modalId){
+        document.getElementById(modalId).style.display="none";
+    }
+</script>
+
+</body>
+
+</html>
